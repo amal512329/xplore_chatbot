@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xplore</title>
+</head>
+
+<style>
+
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+.container{
+    width:100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(9,0,77,0.75),rgba(9,0,77,0.76)),url('static/images/background.png'); 
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+}
+nav{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+
+}
+
+.logo{
+    width: 180px;
+    cursor: pointer;
+
+}
+nav ul{
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 60px;
+
+}
+nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+
+}
+.btn{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    background: #f5168d;
+    color:#fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn img{
+    width:20px;
+    margin: right 10px;;
+}
+.content{
+    margin-top: 5%;
+    color :#fff;
+    max-width: 620px;
+    top: 50px;
+}
+.content h1{
+    font-size: 70px;
+    font-weight:  85px;
+    line-height: 85px;
+    margin-bottom: 30px;
+    
+}
+.content p{
+    margin-top: 5%;
+}
+.text-box
+{
+    background-color: red;
+    margin-left: 700px;
+    margin-top: -200px;
+    
+}
+
+form button{
+    background-color: #f5168d;
+}
+
+
+textarea{
+    display: block;
+  width: 400px;
+  margin: 0 0 20px;
+  padding: 8px 12px 10px 12px;
+  border: 1px solid rgba(0,0,0,.5);
+  background: rgba(0,0,0,.25);
+}
+
+input[type="Phone"]{
+    display: block;
+  width: 400px;
+  margin: 0 0 20px;
+  padding: 8px 12px 10px 12px;
+  border: 1px solid rgba(0,0,0,.5);
+  background: rgba(0,0,0,.25);
+
+}
+label{
+    display: inline-block;
+    width: 400px;
+    text-align: left;
+    
+    clear: both;
+    margin-right:10px;
+}
+</style>
+<body>
+    <div class="container">
+        <nav>
+            <img src="static/images/logo.png" class="logo">
+            <ul>
+             <li><a href="#">Travel Guide</a></li>
+             <li><a href="#">Famous Place</a></li>
+             <li><a href="{% url 'index' %}">Contacts</a></li>         
+           </ul>
+
+           <button class="btn"><img src="static/images/icon.png">Bookings</button>
+         
+
+        </nav>
+
+        <div class="content">
+            <h1>Lets Explore The Beauty</h1>
+            <p>
+                Traveling to these places enriches our experience about different places in the country.
+                 In addition to enjoyment, it enhances our knowledge about different cultures, rituals, mannerism, language, dressing, and lifestyle of people.  
+            </p>
+            
+            <form action="SendData" method="post" class="text-box">
+                {% csrf_token %}
+
+                <div class="form-group mt-4">
+                    <label class="label-text">Enter Your Mobile Number</label>
+                    <input type="Phone" required autofocus class="phone-text" name="Phone" id="Phone" aria-describedby="Phone" placeholder="Please enter your 10 digits number">
+        
+                </div>
+                
+                <div class="form-group mt-4">
+                    <div class="label-text">
+                        <label class="label-text">Enter Message</label>
+                        <textarea  name="textarea" id="Message" cols="35" rows="10" class="message" required placeholder="Write message!"></textarea>
+                    </div>
+                    
+                    
+                </div>
+        
+                <input type="submit" value="Send" class="btn btn-primary btn-lg">
+                
+        
+                
+            </form>
+        </div>
+         
+    </div>
+
+    
+    {% block body %}
+      
+    {% endblock body %}
+</body>
+</html>

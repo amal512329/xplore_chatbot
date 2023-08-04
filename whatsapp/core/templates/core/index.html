@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css”/>
+    <title>Explore the beauty</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Raleway:300);
+        @import url(https://fonts.googleapis.com/css?family=Lusitana:400,700);
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+       * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+}
+
+.get-in-touch {
+   max-width: 650px;
+   margin: 0 auto;
+   position: relative;
+   top: 150px;
+   right: 50px;
+   
+   }
+   title {
+     text-align: center;
+     font-family: Raleway, sans-serif;
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-size: 36px;
+     line-height: 48px;
+     padding-bottom: 10px;
+  }
+
+  .contact-form {
+   .form-field {
+      position: relative;
+      margin: 32px 0;
+   }}
+   
+
+
+body{
+    width:100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(9,0,77,0.75),rgba(9,0,77,0.76)),url('static/images/background.png'); 
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+    background-color:transparent;
+}
+
+.open-button {
+  padding:10px 40px;
+  background-color:white;
+  color:white;
+  font-size:17px;
+  max-width:300px;
+  border-radius:30px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 23px;
+  right: 250px;  
+  background: transparent;
+}
+.close-button{
+  font-family: 'Varela Round', sans-serif;
+  font-size: 10px;
+  text-decoration: none;
+  width: 40px;
+  height: 20px;
+  top: 8px;
+  background:lightblue;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 0;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 500ms cubic-bezier(0.565, -0.070, 0.140, 1.135);
+  transition-timing-function: cubic-bezier(0.565, -0.070, 0.140, 1.135); 
+
+}
+
+
+
+
+.chatbox__footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5px;
+    background: rebeccapurple;
+    box-shadow: black;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-top: 1px;
+    right: 200px;
+}
+
+
+.container {
+  background: transparent;
+  /* max-width: 80px; */
+  max-height:120px;
+  margin: 20px auto;
+  width: 200px;
+  height: 100px;
+  display: none;
+  position: relative;
+  left: 200px;
+  top: -290px;
+ 
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 3); 
+ 
+ 
+ } 
+
+ nav{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: -10px 0;
+
+}
+
+.logo{
+    width: 180px;
+    cursor: pointer;
+
+}
+nav ul{
+    list-style: none;
+    width: 100%;
+    text-align: left;
+    padding-right: 60px;
+
+}
+nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;}
+ .title {
+     text-align: center;
+     font-family: Raleway, sans-serif;
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-size: 36px;
+     line-height: 48px;
+     padding-bottom: 10px;
+     padding-right: 340px;
+     top: 80px;
+  }
+
+.chat-header {
+    background: rgb(144, 35, 207);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: var(--primaryBoxShadow);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+   
+}
+
+
+
+.chatbox__support{
+    background: #f9f9f9;
+    height: 250px;
+    width: 300px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    right: 400px;
+   
+}
+
+.chatbox__footer input {
+    border: none;
+    padding: 10px 10px;
+    border-radius: 30px;
+    text-align: center;
+    size: 300px;
+}
+
+.chatbox-imager {
+    
+    margin-right: 180px;
+    width: 30px;
+    background-color:transparent;
+   
+}
+
+.chat-box {
+  height: 270px;
+  width: 300px;
+  right: 190px;
+  overflow-y: scroll;
+  margin-bottom: 4px;
+  padding: -60px;
+  background-color: white;
+}
+
+.message {
+    box-sizing: border-box;
+			padding: 0.5rem 1rem;
+			margin: 1rem;
+			background:white;
+			border-radius: 1.125rem 1.125rem 1.125rem 0;
+			min-height: 2.25rem;
+			width: fit-content;
+			max-width: 66%;
+            max-height: 300px;
+			
+			box-shadow: 
+				0 0 2rem rgba(black, 0.075),
+				0rem 1rem 1rem -1rem rgba(black, 0.1);
+}
+
+.message.received {
+  background-color:lightskyblue;
+  float: left;
+  font-family: "proxima-nova", "Source Sans Pro", sans-serif;
+  color: black;
+}
+
+.message.sent {
+  background-color: #e2f2ff;
+  align-items: flex-end;
+  float: right;
+ 
+}
+
+.chat-input {
+  display: flex;
+  border: none;
+  padding: 4px 4px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.send-button{
+    font-family: 'Varela Round', sans-serif;
+  font-size: 10px;
+  text-decoration: none;
+  width: 40px;
+  height: 20px;
+  top: 8px;
+  background:rebeccapurple;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 0;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 500ms cubic-bezier(0.565, -0.070, 0.140, 1.135);
+  transition-timing-function: cubic-bezier(0.565, -0.070, 0.140, 1.135);
+}
+
+.send-button span {
+  color: black;
+  transition: all 100ms cubic-bezier(0.565, -0.070, 0.140, 1.135);
+  transition-timing-function: cubic-bezier(0.565, -0.070, 0.140, 1.135);
+}
+
+
+button {
+    padding: 10px;
+    
+    border: none;
+    outline: none;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  
+}
+.submit-btn {
+      display: inline-block;
+      background-color: #000;
+      color: #fff;
+      font-family: Raleway, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+   }
+
+
+.send-svg{
+    width: 40px;
+  height: 20px;
+}
+.icon{
+    background-color:transparent;
+}
+h4{
+    
+    margin-left: -70px;
+    font-size: 25px;
+	font-weight: 600;
+    background-color: black;
+	font-family: Merriweather;
+	text-transform: uppercase;
+    -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.chatbox__content--header p{
+    
+     text-align: center;
+    font-size: 15px;
+	font-weight: 400;
+    background-color: red;
+    padding-left: -100px;
+    
+}
+section h1{
+    
+    margin-top: -50px;
+    left: 20px;
+}
+
+.chat-header label{
+font-size: 20px;
+width: 300px;
+left: 400px;
+display: inline-block;
+background-color: transparent;
+color: #070404;
+font-family: Raleway, sans-serif;
+}
+
+.logged-in {
+    color: green;
+ 
+    left: 500px;
+    font-size: 15px;
+    width: 300px;
+    display: inline-block;
+   
+  
+}
+.logged-in h8{
+    color: black;
+  
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <nav>
+            
+            <ul>
+             <li><a href="#">Travel Guide</a></li>
+             <li><a href="#">Famous Place</a></li>
+             <li><a href="{% url 'index' %}">Contacts</a></li>         
+           </ul>
+
+           
+         
+
+        </nav>
+    </div>
+
+    <section class="get-in-touch">
+        <h1 class="title">Get in touch</h1>
+        <form class="contact-form row">
+           <div class="form-field col x-50">
+              <input id="name" class="input-text js-input" type="text" required>
+              <label class="label" for="name"><h3>Enter Your Name</h3></label>
+              
+           </div>
+           <div class="form-field col x-50">
+              <input id="email" class="input-text js-input" type="email" required>
+              <label class="label" for="email">E-mail</label>
+           </div>
+           <div class="form-field col x-100">
+              <input id="message" class="input-text js-input" type="text" required>
+              <label class="label" for="message">Message</label>
+           </div>
+           <div class="form-field col x-100 align-center">
+              <input class="submit-btn" type="submit" value="Submit">
+           </div>
+        </form>
+     </section>
+    
+      
+    
+    <button class="open-button"onclick="openForm()">
+    <img src="{% static 'images/icons/chatbox-icon.svg' %}">
+    </button>
+    
+        
+        <div class="container" id="myForm">
+            
+            <div class="chatbox">
+
+                <div class="chatbox__support">
+
+                    <div class="chat-header">
+                        <div class="chatbox-imager">
+                           <img src="{% static 'images/image.png' %}" alt="image">
+                           <div class="user-chat-img">
+                            
+                            <div class="offline"></div>
+                        </div>
+                           <label class="chat-name" >Jessica Smith</label>  
+                           <span class="logged-in"><h8>Active Now</h8>●</span>
+                          
+                        </div>
+                        
+                           
+                    </div>
+           
+                        <div class="chat-box" id="chat-box">
+                           <div class="message received">Hello! How can I assist you today?</div>
+                        </div>
+                            <div class="chatbox__footer">
+    
+                                <img src="{% static 'images/icons/emojis.svg' %}" alt="">
+                                <img src="./images/icons/microphone.svg" alt="">
+                                
+                                <div class="chat-input">
+                                  <input type="text" id="user-input" placeholder="Type your message...">
+                                  <button id="send-btn" class="send-button">
+                                    <img src="{% static 'images/icons/send.svg' %}" alt="" class="send-svg">
+                                  </button>
+                                  <button type="button" class="close-button" onclick="closeForm()">
+                                    exit
+                                   </button>
+                                   
+                                </div>   
+                        
+                            </div>
+    
+                </div>
+    
+                
+
+            </div>
+            
+         
+        </div>
+            
+            
+
+            
+   
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- #open pop up -->
+    <script>
+   
+        function openForm() {
+        document.getElementById("myForm").style.display = "block";
+}
+    // close winow
+
+    function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+        var sendBtn = document.getElementById("send-btn");
+        var userInput = document.getElementById("user-input");
+        var chatBox = document.getElementById("chat-box");
+
+        sendBtn.addEventListener("click", function() {
+            var message = userInput.value.trim();
+            if (message !== "") {
+            appendMessage(message, "sent");
+            userInput.value = "";
+            scrollToBottom();
+            // TODO: Handle user message and generate bot response
+            $.ajax({
+                url: "http://127.0.0.1:8000/chat_gpt/?prompt=" + message,
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: function(res) {
+                    console.log(res);
+                    // alert(res);
+                    appendMessage(res, "received");
+                }
+            });
+            }
+        });
+
+        function appendMessage(message, type) {
+            var messageElement = document.createElement("div");
+            messageElement.classList.add("message", type);
+            messageElement.innerText = message;
+            chatBox.appendChild(messageElement);
+        }
+
+        function scrollToBottom() {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        });
+
+    </script>
+</body>
+</html>
+
